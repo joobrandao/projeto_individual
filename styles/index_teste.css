@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Patua One", cursive;
+}
+
+* a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+#home {
+  background: url("../assets/imagem_banner_pp.png");
+  background-size: cover;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  width: 15rem;
+  height: 6rem;
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40rem;
+  height: 100%;
+}
+
+.nav_bar ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 80%;
+  height: 100%;
+}
+
+.nav_bar ul li {
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  color: rgb(225, 215, 204);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-size: large;
+}
+
+.nav_bar ul li a {
+  text-decoration: none;
+}
+
+.nav_bar img {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.container #gancho {
+  width: 40rem;
+  height: 30rem;
+  color: rgb(225, 215, 204);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-left: 25%;
+}
+
+.nav_bar ul li a {
+  color: rgb(225, 215, 204);
+  font-weight: bold;
+}
+
+.nav_bar ul li a:hover {
+  color: rgb(225, 215, 204);
+  font-size: 1.3rem;
+}
+
+#sobre {
+  background-color: rgb(9, 0, 10);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap: 7rem;
+}
+
+.boxT {
+  width: 30rem;
+  height: 30rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
