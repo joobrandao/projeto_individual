@@ -102,6 +102,88 @@ body {
 }
 
 #sobre {
+  background-color: rgb(225, 220, 225);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap: 7rem;
+}
+
+#criador {
+    background-color: rgb(9, 0, 10);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 7rem;
+}
+
+.boxT {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 1rem; 
+}
+
+#boxTsobre {
+  background-color: rgb(9, 0, 10);
+  color: rgb(225, 215, 204);
+}
+
+#boxTcriador {
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+}
+
+
+
+.container p span.typed-text {
+  font-weight: normal;
+  color: #dd7732;
+}
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+
+.botao {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 1rem;
+  color: rgb(9, 0, 10);
+  background-color: rgb(225, 215, 204);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: rgb(9, 0, 10);
+  color: rgb(225, 215, 204);
+  border: 2px solid rgb(225, 215, 204);
+}
+
+#contato {
   background-color: rgb(9, 0, 10);
   display: flex;
   justify-content: space-around;
@@ -110,13 +192,3 @@ body {
   gap: 7rem;
 }
 
-.boxT {
-  width: 30rem;
-  height: 30rem;
-  background-color: rgb(255, 255, 255);
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
