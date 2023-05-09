@@ -5,23 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/index.js"></script>
-    <link rel="stylesheet" href="../styles/index.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/indexTeste.css" />
     <title>Home</title>
   </head>
   <body>
-    <!--  -->
     <div class="container" id="home">
       <div class="header">
-        <img src="../assets/logo_pi.png" alt="" />
+        <img src="./assets/imagensTeste/logo_pi.png" alt="" />
         <div class="nav_bar">
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#criador">Criador</a></li>
             <li><a href="#contato">Contato</a></li>
-            <a href="Cadastro.html"
-              ><img src="../assets/guitarrista.png" alt=""
+            <a href="cadastro.html"
+              ><img src="./assets/imagensTeste/guitarrista.png" alt=""
             /></a>
           </ul>
         </div>
@@ -36,8 +35,8 @@
 
     <div class="container" id="sobre">
       <div class="boxT" id="boxTsobre">
-        <p>
-          Musica é <span class="typed-text"></span
+        <p style="font-size: 1.8rem">
+          Musica é <span class="typed-text" id="typed-text"></span
           ><span class="cursor">&nbsp;</span>
         </p>
         <h3>
@@ -51,9 +50,19 @@
           suas características distintas e oferecendo uma experiência única e
           enriquecedora na descoberta de novas formas de expressão musical.
         </p>
-        <button class="botao">DESCOBRIR</button>
+        <a href="Cadastro.html"><button class="botao">DESCOBRIR</button></a>
       </div>
-      <img src="#" alt="" />
+      <div class="comentarios">
+        <div class="comentario1">
+          <p>
+            "Não sou fã de rap e funk, acho as letras muito explícitas e
+            ofensivas."
+          </p>
+        </div>
+        <div class="comentario2">
+          <p>"Não sou muito fã de metal, acho muito barulhento e agressivo."</p>
+        </div>
+      </div>
     </div>
 
     <div class="container" id="criador">
@@ -73,7 +82,7 @@
           suas características distintas e oferecendo uma experiência única e
           enriquecedora na descoberta de novas formas de expressão musical.
         </p>
-        <button class="botao"></button>
+       <a href="Cadastro.html"><button class="botao"></button></a> 
       </div>
       <img src="#" alt="" />
     </div>
@@ -100,10 +109,55 @@
     </div>
 
     <div class="footer">
-      <a href="#home" target="_blank"><img src="../assets/home-icon-silhouette.png" alt=""></a>
-      <a href="https://www.instagram.com/joaovitor_a.b/" target="_blank"><img src="../assets/instagram.png" alt=""></a>
-      <a href="https://github.com/joobrandao" target="_blank"><img src="../assets/github-sign.png" alt=""></a>
-      <a href="#home" target="_blank"><img src="../assets/whatsapp.png" alt=""></a>
+      <a href="Index.html" target="_blank"
+        ><img src="./assets/imagensTeste/home-icon-silhouette.png" alt=""
+      /></a>
+      <a href="https://www.instagram.com/joaovitor_a.b/" target="_blank"
+        ><img src="./assets/imagensTeste/instagram.png" alt=""
+      /></a>
+      <a href="https://github.com/joobrandao" target="_blank"
+        ><img src="./assets/imagensTeste/github-sign.png" alt=""
+      /></a>
+      <a href="#home" target="_blank"
+        ><img src="./assets/imagensTeste/whatsapp.png" alt=""
+      /></a>
     </div>
   </body>
 </html>
+
+<script>
+  var palavras = ["emocionante", "vibrante", "cativante", "LIFE CHANGING"];
+  var i = 0;
+  var j = 0;
+  var apagar = false;
+
+  function escreverPalavra() {
+    var div = document.getElementById("typed-text");
+
+    if (apagar) {
+      div.textContent = div.textContent.slice(0, -1);
+      if (div.textContent == "") {
+        apagar = false;
+        j = 0;
+        i++;
+        if (i >= palavras.length) {
+          i = 0;
+        }
+        setTimeout(escreverPalavra, 1000);
+      } else {
+        setTimeout(escreverPalavra, 50);
+      }
+    } else {
+      if (j < palavras[i].length) {
+        div.textContent += palavras[i][j];
+        j++;
+        setTimeout(escreverPalavra, 100);
+      } else {
+        apagar = true;
+        setTimeout(escreverPalavra, 1000);
+      }
+    }
+  }
+
+  escreverPalavra();
+</script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="./css/indexTeste.css" />
+    <link rel="stylesheet" href="./css/cadastroTeste.css" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <!--  -->
+    <div class="container" id="cadastro">
+      <div class="header">
+        <img
+          src="./assets/imagensTeste/logo_pi.png"
+          alt="Logo da Groove Odyssey"
+          href="index.html"
+        />
+        <div class="nav_bar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#criador">Criador</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <a href="Cadastro.html"
+              ><img src="./assets/imagensTeste/guitarrista.png" alt=""
+            /></a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="boxT" id="boxTcadastro">
+        <h1>Que comece a odisseia!</h1>
+        <p>
+          Para começar a sua jornada, preencha os campos abaixo com as
+          informações necessárias.
+        </p>
+
+        <input
+          type="text"
+          id="nome_input"
+          placeholder="Informe seu nome"
+          style="text-align: center"
+        />
+        <input
+          type="text"
+          id="email_input"
+          placeholder="Informe seu email"
+          style="text-align: center"
+        />
+        <input
+          type="password"
+          id="senha_input"
+          placeholder= "******"
+          style="text-align: center"
+        />
+        <input
+          type= "password"
+          id="confirmacao_senha_input"
+          placeholder= "******"
+          style="text-align: center"
+        />
+        <p style="font-size: 3r">
+         Já tem um cadastro? <a href="login.html">Clique aqui</a>
+        </p>
+        <button class="botao" onclick="cadastrar()">DESCOBRIR</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="Index.html" target="_blank"
+        ><img src="./assets/imagensTeste/home-icon-silhouette.png" alt=""
+      /></a>
+      <a href="https://www.instagram.com/joaovitor_a.b/" target="_blank"
+        ><img src="./assets/imagensTeste/instagram.png" alt=""
+      /></a>
+      <a href="https://github.com/joobrandao" target="_blank"
+        ><img src="./assets/imagensTeste/github-sign.png" alt=""
+      /></a>
+      <a href="#home" target="_blank"
+        ><img src="./assets/imagensTeste/whatsapp.png" alt=""
+      /></a>
+    </div>
+  </body>
+</html>
+
+<script>
+  function cadastrar() {
+
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
+    ) {
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>
