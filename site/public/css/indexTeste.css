@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Shadows+Into+Light&display=swap');
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Patua One", cursive;
+  font-family: 'Shadows Into Light', sans-serif;
+  font-weight: bold;
 }
 
 * a {
@@ -18,19 +19,32 @@ body {
 .container {
   width: 100%;
   height: 100vh;
+  position: relative;
 }
 
 #home {
-  background: url("../assets/imagensTeste/imagem_banner_pp.png");
   background-size: cover;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.container #backgroundVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px);
 }
 
 .header {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
+  background-color: rgb(248,219,126, 0.8);
 }
 
 .header img {
@@ -61,12 +75,13 @@ body {
   list-style: none;
   width: 50%;
   height: 100%;
-  color: rgb(225, 215, 204);
+  color: #ec6349;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   font-size: large;
+  font-size: 1.5rem;
 }
 
 .nav_bar ul li a {
@@ -82,27 +97,35 @@ body {
 .container #gancho {
   width: 40rem;
   height: 30rem;
-  color: rgb(225, 215, 204);
+  color: #f8db7e;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
   font-size: 2.5rem;
-  margin-left: 25%;
+  margin-left: 28rem;
+  position: absolute;
+  top: 0;
+  margin-top: 10rem;
+  background-color: rgb(111, 27, 44, 0.85);
+  border-radius: 2rem;
+  gap: 2rem;
+  padding: 1rem;
 }
 
 .nav_bar ul li a {
-  color: rgb(225, 215, 204);
+  color: #6f1b2c;
   font-weight: bold;
 }
 
 .nav_bar ul li a:hover {
-  color: rgb(225, 215, 204);
+  color: #ec6349;
   font-size: 1.3rem;
 }
 
 #sobre {
-  background-color: rgb(225, 220, 225);
+  background-color: #310a26;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -136,7 +159,7 @@ body {
  }
 
 #criador {
-  background-color: rgb(9, 0, 10);
+  background-color: #ec6349;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -241,7 +264,7 @@ body {
 }
 
 .footer {
-  background-color: rgb(9, 0, 10);
+  background-color: #310a26;
   width: 100%;
   height: 5rem;
   display: flex;
@@ -254,4 +277,9 @@ body {
   height: 3rem;
   filter: invert(1);
   transition: 500ms linear;
+}
+
+.footer img:hover {
+  filter: invert(0);
+  transform: scale(1.2)
 }
