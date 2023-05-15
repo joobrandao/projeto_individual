@@ -11,7 +11,13 @@
   </head>
   <body>
     <div class="container" id="home">
-      <video src="./assets/toca-discos-38392.mp4" id="backgroundVideo" autoplay muted loop></video>
+      <video
+        src="./assets/toca-discos-38392.mp4"
+        id="backgroundVideo"
+        autoplay
+        muted
+        loop
+      ></video>
       <div class="header">
         <img src="./assets/imagensTeste/logo_pi.png" alt="" />
         <div class="nav_bar">
@@ -28,15 +34,13 @@
       </div>
 
       <h1 id="gancho">
-        <p>
-          Explore novos ritmos e vozes no mundo da música!
-        </p>  
+        <p>Explore novos ritmos e vozes no mundo da música!</p>
 
-        <p style="font-size: 1.5rem;">
+        <p style="font-size: 1.5rem">
           Nosso blog é um espaço dedicado a explorar e compartilhar a
           diversidade de estilos musicais e artistas, celebrando a riqueza e a
           singularidade da música em suas múltiplas formas.
-        </p>  
+        </p>
         <a href="#sobre"><button class="botao">DESCOBRIR</button></a>
       </h1>
     </div>
@@ -73,47 +77,46 @@
       </div>
     </div>
 
-                  <div class="container" id="criador">
-                    <div class="boxT" id="boxTcriador">
-                      <div class="imgsEu">
-                    <img src="./assets/imgs/eu_perfil_01.png" alt="">
-                    <img src="./assets/imgs/eu_perfil_04.png" alt="">
-                  </div>
-                      <h3>
-                        Nosso blog é um espaço dedicado a explorar e compartilhar a
-                        diversidade de estilos musicais e artistas, celebrando a riqueza e a
-                        singularidade da música em suas múltiplas formas.
-                      </h3>
-
-                    </div>
-                    <div class="imagensArtistas">
-                      <h1 >Meus artistas preferidos!</h1>
-                      <img src="" alt="">
-                      <img src="" alt="">
-                      <img src="" alt="">
-                      <img src="" alt="">
-                    </div>
-                  </div>
+    <div class="container" id="criador">
+      <div class="boxT" id="boxTcriador">
+        <div class="imgsEu">
+          <img src="./assets/imgs/eu_perfil_01.png" alt="" />
+          <img src="./assets/imgs/eu_perfil_04.png" alt="" />
+        </div>
+        <h3>
+          Guitarrista APAIXONADO por musica e tecnologia, que decidiu criar um
+          blog para compartilhar a beleza dos diferentes estilos musicais!
+        </h3>
+      </div>
+      <div class="imagensArtistas">
+        <h1>Meus artistas preferidos!</h1>
+        <div class="caixaImagem">
+          <img src="./assets/imgs/john_circulo.png" alt="" />
+          <img src="./assets/imgs/bruno_circulo.png" alt="" />
+        </div>
+        <div class="caixaImagem">
+          <img src="./assets/imgs/sola_circulo.png" alt="" />
+          <img src="./assets/imgs/metallica_circulo.png" alt="" />
+        </div>
+      </div>
+    </div>
 
     <div class="container" id="contato">
+      <img src="./assets/imgs/notas-musicales-(gif-animad.gif" alt="">
       <div class="boxT" id="boxTcontato">
+        <h3 style="font-size: 2rem">Converse comigo!</h3>
         <p>
-          Musica é <span class="typed-text"></span
-          ><span class="cursor">&nbsp;</span>
+          Tem algum comentário, sugestão ou crítica? Me escreva uma mensagem
+          agora!
         </p>
-        <h3>
-          Nosso blog é um espaço dedicado a explorar e compartilhar a
-          diversidade de estilos musicais e artistas, celebrando a riqueza e a
-          singularidade da música em suas múltiplas formas.
-        </h3>
-        <p>
-          Nosso objetivo é levar aos nossos leitores novos horizontes musicais,
-          apresentando estilos e artistas que talvez não conheçam, explorando
-          suas características distintas e oferecendo uma experiência única e
-          enriquecedora na descoberta de novas formas de expressão musical.
-        </p>
-        <button class="botao">Alou</button>
+        Assunto:
+        <input type="text" id="input_assunto"/>
+        Mensagem:
+        <input type="text" id="comentarioUsuario" />
+
+        <button class="botao" onclick="cadastrar()">Enviar!</button>
       </div>
+      <img src="./assets/imgs/" alt="">
     </div>
 
     <div class="footer">
@@ -169,3 +172,65 @@
 
   escreverPalavra();
 </script>
+
+<script>
+  function cadastrar() {
+
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var assuntoVar = input_assunto.value;
+    var mensagemVar = comentarioUsuario.value;
+
+    if (
+      assuntoVar == "" ||
+      mensagemVar == ""
+    ) {
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        assuntoVar: assuntoVar,
+        mensagemVar: mensagemVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>
+

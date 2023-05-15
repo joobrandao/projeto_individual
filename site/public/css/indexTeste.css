@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Shadows+Into+Light&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&family=Shadows+Into+Light&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Shadows Into Light', sans-serif;
+  font-family: "Shadows Into Light", sans-serif;
   font-weight: bold;
 }
 
@@ -44,7 +44,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  background-color: rgb(248,219,126, 0.8);
+  background-color: rgb(248, 219, 126, 0.8);
 }
 
 .header img {
@@ -133,7 +133,7 @@ body {
   gap: 7rem;
 }
 
-.comentarios{
+.comentarios {
   width: 50%;
   height: 30rem;
   border-radius: 1rem;
@@ -145,10 +145,10 @@ body {
 }
 
 .comentario1 {
- width: 60%;
- height: 50%;
- text-align: start;
- color: #ec6349;
+  width: 60%;
+  height: 50%;
+  text-align: start;
+  color: #ec6349;
 }
 
 .comentario2 {
@@ -158,7 +158,7 @@ body {
   align-self: flex-end;
   margin-top: 5rem;
   color: #ec6349;
- }
+}
 
 #criador {
   background-color: #ec6349;
@@ -166,7 +166,6 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  gap: 7rem;
 }
 
 .imagensArtistas {
@@ -178,6 +177,13 @@ body {
   text-align: center;
   font-size: 2rem;
   margin-left: 2rem;
+  display: flex;
+  margin-bottom: 15rem;
+}
+
+.imagensArtistas img {
+  width: 18rem;
+  height: 18rem;
 }
 
 .boxT {
@@ -214,7 +220,6 @@ body {
   font-size: 2.3rem;
   font-weight: bolder;
   color: #ec6349;
-
 }
 .container p span.cursor {
   display: inline-block;
@@ -278,11 +283,35 @@ body {
   background-color: rgb(225, 220, 225);
   flex-direction: row;
   gap: 7rem;
+  background-color: #6f1b2c;
 }
 
 #boxTcontato {
-  color: rgb(225, 215, 204);
-  background-color: rgb(9, 0, 10);
+  color: #6f1b2c;
+  background-color: #f8db7e;
+  position: absolute;
+}
+
+#boxTcontato input {
+  width: 20rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+#boxTcontato #comentarioUsuario {
+  width: 28rem;
+  height: 12rem;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+#boxTcontato button {
+  margin-top: 1rem;
 }
 
 .footer {
@@ -303,6 +332,5 @@ body {
 
 .footer img:hover {
   filter: invert(0);
-  transform: scale(1.2)
+  transform: scale(1.2);
 }
-
