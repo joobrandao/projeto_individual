@@ -9,7 +9,7 @@
 background-color: #6f1b2c;
 width: 35rem;
 height: 30rem;
-color: rgb(225, 215, 204);
+color: rgb(248,219,126);
 display: flex;
 justify-content: justify;
 align-items: center;
@@ -24,21 +24,21 @@ margin-top: 10rem;
 
 #boxTcadastro h1 {
     font-size: 3rem;
-    color: rgb(225, 215, 204);
+    color: rgb(248,219,126);
 }
 
 #boxTcadastro p {
     font-size: 1.5rem;
-    color: rgb(225, 215, 204);
+    color: rgb(248,219,126);
 }
 
 #boxTcadastro a {
-    color: rgb(225, 215, 204);
+    color: rgb(248,219,126);
     text-decoration: none;
 }
 
 #boxTcadastro a:hover {
-    color: rgb(225, 215, 204);
+    color: #ec6349;
     text-decoration: underline;
 }
 
@@ -50,6 +50,7 @@ margin-top: 10rem;
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 #boxTcadastro button:hover {

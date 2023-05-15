@@ -148,6 +148,7 @@ body {
  width: 60%;
  height: 50%;
  text-align: start;
+ color: #ec6349;
 }
 
 .comentario2 {
@@ -156,6 +157,7 @@ body {
   text-align: start;
   align-self: flex-end;
   margin-top: 5rem;
+  color: #ec6349;
  }
 
 #criador {
@@ -163,13 +165,13 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-direction: row-reverse;
+  flex-direction: row;
   gap: 7rem;
 }
 
 .boxT {
-  width: 30rem;
-  height: 30rem;
+  width: 35rem;
+  height: 35rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -177,12 +179,13 @@ body {
   justify-content: space-evenly;
   text-align: center;
   padding: 1rem;
+  font-size: 1.4rem;
 }
 
 #boxTsobre {
-  background-color: rgb(9, 0, 10);
+  background-color: #6f1b2c;
   color: rgb(225, 215, 204);
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 #boxTcriador {
@@ -190,9 +193,17 @@ body {
   color: rgb(9, 0, 10);
 }
 
+#boxTcriador img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+}
+
 .container p span.typed-text {
-  font-weight: normal;
-  color: #dd7732;
+  font-size: 2.3rem;
+  font-weight: bolder;
+  color: #ec6349;
+
 }
 .container p span.cursor {
   display: inline-block;
