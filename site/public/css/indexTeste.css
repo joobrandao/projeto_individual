@@ -169,6 +169,17 @@ body {
   gap: 7rem;
 }
 
+.imagensArtistas {
+  width: 50%;
+  height: 30rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
 .boxT {
   width: 35rem;
   height: 35rem;
@@ -294,3 +305,4 @@ body {
   filter: invert(0);
   transform: scale(1.2)
 }
+
