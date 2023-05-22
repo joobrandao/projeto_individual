@@ -47,6 +47,23 @@
           placeholder="Informe seu email"
           style="text-align: center"
         />
+
+
+        <select id="genero_input" style="text-align: center">
+          <option value="">Selecione seu gênero musical favorito!</option>
+          <option value="Pop">Pop</option>
+          <option value="Folk">Folk</option>
+          <option value="Gospel">Gospel</option>
+          <option value="Rock">Rock/Metal</option>
+          <option value="Indie">Indie</option>
+          <option value="R&B">R&B</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Electronica">Electronica</option>
+          <option value="Rap">Rap</option>
+          <option value="Outros">Outros</option>
+        </select>
+
+
         <input
           type="password"
           id="senha_input"
@@ -91,12 +108,14 @@
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
+    var generoVar = genero_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
     if (
       nomeVar == "" ||
       emailVar == "" ||
+      generoVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
@@ -118,6 +137,7 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
+        generoServer: generoVar,
         senhaServer: senhaVar,
       }),
     })

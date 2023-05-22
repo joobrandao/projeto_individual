@@ -114,7 +114,7 @@
         Mensagem:
         <input type="text" id="comentarioUsuario" />
 
-        <button class="botao" onclick="cadastrar()">Enviar!</button>
+        <button class="botao" onclick="enviarMensagem()">Enviar!</button>
       </div>
       <img src="./assets/imgs/" alt="">
     </div>
@@ -174,7 +174,7 @@
 </script>
 
 <script>
-  function cadastrar() {
+  function enviarMensagem() {
 
 
     //Recupere o valor da nova input pelo nome do id
@@ -194,7 +194,7 @@
     }
 
     // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
+    fetch("/usuarios/enviarMensagem", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -218,12 +218,12 @@
           limparFormulario();
           finalizarAguardar();
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+          throw "Houve um erro ao tentar enviar a mensagem!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+        //finalizarAguardar();
       });
 
     return false;

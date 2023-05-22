@@ -70,6 +70,8 @@ function publicar(req, res) {
     var descricao = req.body.descricao;
     var idUsuario = req.params.idUsuario;
 
+    console.log(req.params);
+
     if (titulo == undefined) {
         res.status(400).send("O título está indefinido!");
     } else if (descricao == undefined) {

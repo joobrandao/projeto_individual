@@ -141,7 +141,7 @@
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
                 window.location = "/dashboard/mural.html";
                 limparFormulario();
-                finalizarAguardar();
+               // finalizarAguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -149,7 +149,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+           // finalizarAguardar();
         });
 
         return false;
@@ -257,12 +257,12 @@
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+            //finalizarAguardar();
         });
     }
 
     function testar() {
-        aguardar();
+       // aguardar();
 
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
 
@@ -271,7 +271,7 @@
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
 
-        finalizarAguardar();
+      //  finalizarAguardar();
 
         return false;
     }
