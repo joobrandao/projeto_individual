@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groove Odyssey Dashboard</title>
+    <title>Groove Odyssey | Dashboard</title>
 
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="dashboards.css" />
@@ -21,10 +21,10 @@
       rel="stylesheet"
     />
 
-    <!-- scripts do Chart.js - 2022-1 -->
+   
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!--FONT AWESOME-->
+    
     <script
       src="https://kit.fontawesome.com/9f7414eb10.js"
       crossorigin="anonymous"
@@ -34,15 +34,15 @@
   <body onload=" atualizarFeed()">
     <div class="janela">
       <div class="header-left">
-        <h1>Groove Odyssey</h1>
+        <img src="../assets/imagensTeste/logo_pi.png" alt="">
 
         <div class="hello">
-          <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+          <h3>Bem vindo, <span id="b_usuario">usuário</span>!</h3>
         </div>
 
         <div class="btn-nav-white">
           <a href="./cards.html">
-            <h3>Aquários</h3>
+            <h3>Quiz</h3>
           </a>
         </div>
 
@@ -52,7 +52,7 @@
 
         <div class="btn-nav-white">
           <a href="./mural.html">
-            <h3>Mural de Avisos</h3>
+            <h3>Comentários</h3>
           </a>
         </div>
 
@@ -63,7 +63,7 @@
 
       <div class="dash">
         <div class="btns-dash">
-          <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+          
           <button
             class="btn-chart btn-pink"
             onclick="exibirAquario(1)"
@@ -200,6 +200,8 @@
   // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // Configura o gráfico (cores, tipo, etc), materializa-o na página e,
   // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+  
+
   function plotarGrafico(resposta, idAquario) {
     console.log("iniciando plotagem do gráfico...");
 
@@ -211,7 +213,7 @@
       labels: labels,
       datasets: [
         {
-          label: "MELHORES MUSICAS DE 2023",
+          label: "QUANTIDADE DE CADASTROS COM ESTE GÊNERO MUSICAL",
           data: [],
           fill: true,
           backgroundColor: [
@@ -220,6 +222,10 @@
             "#ce2340",
             "#ec6349",
             "#310a26",
+            "##F97068",
+            "##F2CD5D",
+            "##745296",
+            "##412722",
           ],
           tension: 0.1,
         },
@@ -251,6 +257,7 @@
     const config = {
       type: "doughnut",
       data: dados,
+    
     };
 
     // Adicionando gráfico criado em div na tela

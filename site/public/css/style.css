@@ -254,9 +254,9 @@ input {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
-  /* border: 3px solid pink; */
+  border-right: 3px solid #6f1b2c;
+  background-color: #f8db7e;
+
 }
 
 .dash-right {
@@ -269,8 +269,13 @@ input {
   left: 25%;
 }
 
+.header-left img {
+  width: 15rem;
+  height: 6rem;
+}
+
 .header-left h1 {
-  color: #32b9cd;
+  color: #310a26;
 }
 
 .hello {
@@ -280,9 +285,9 @@ input {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #6f1b2c;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .hello h3 span {

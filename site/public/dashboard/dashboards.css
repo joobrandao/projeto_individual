@@ -10,6 +10,14 @@ body {
   justify-content: center;
 }
 
+.janela {
+  background-color: #310a26;
+}
+
+.dash-right {
+background-color: #310a26;
+}
+
 .dash-right .avisos {
   width: 100%;
   /* border: 3px solid pink; */
@@ -111,7 +119,7 @@ body {
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: #161818;
 }
 
 .dash {
@@ -119,7 +127,7 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #310a26;
   height: 100vh;
   overflow: auto;
 }
@@ -221,7 +229,7 @@ body {
 }
 
 .graph {
-  width: 80%;
+  width: 48%;
   margin: auto;
   padding-top: 10px;
 }
