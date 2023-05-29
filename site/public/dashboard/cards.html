@@ -1,168 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <link
-      rel="shortcut icon"
-      href="../assets/icon/favicon2.ico"
-      type="image/x-icon"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groove Odyssey | Quiz</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="dashboards.css" />
+<head>
+  <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Groove Odyssey | Quiz</title>
 
-    <script src="../js/funcoes.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <!-- <body onload="validarSessao(), atualizacaoPeriodica()"> -->
-    <body>
-    <div class="janela">
-      <div class="header-left">
-        <img src="../assets/imagensTeste/logo_pi.png" alt="">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="dashboards.css" />
 
-        <div class="hello">
-          <h3>Bem vindo, <span id="b_usuario">usuário</span>!</h3>
-        </div>
+  <script src="../js/funcoes.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+</head>
+<!-- <body onload="validarSessao(), atualizacaoPeriodica()"> -->
 
-        <div class="btn-nav">
-          <h3>Quiz</h3>
-        </div>
+<body>
+  <div class="janela">
+    <div class="header-left">
+      <img src="../assets/imagensTeste/logo_pi.png" alt="">
 
-        <div class="btn-nav-white">
-          <a href="./dashboard.html">
-            <h3>Gráficos</h3>
-          </a>
-        </div>
-
-        <div class="btn-nav-white">
-          <a href="./mural.html">
-            <h3>Comentários</h3>
-          </a>
-        </div>
-
-        <div class="btn-logout" onclick="limparSessao()">
-          <h3>Sair</h3>
-        </div>
+      <div class="hello">
+        <h3>Bem vindo, <span id="b_usuario">usuário</span>!</h3>
       </div>
 
-      <div class="dash">
-        <div class="caixa">
-            <h1>Questões <span id="questao_atual"></span>/10</h1>
-            <div class="pergunta"></div>
-            <div class="respostas">
-                <div class="resposta" onclick="responder(1)"></div>
-                <div class="resposta" onclick="responder(2)"></div>
-                <div class="resposta" onclick="responder(3)"></div>
-                <div class="resposta" onclick="responder(4)"></div>
+      <div class="btn-nav">
+        <h3>Quiz</h3>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="./dashboard.html">
+          <h3>Gráficos</h3>
+        </a>
+      </div>
+
+      <div class="btn-nav-white">
+        <a href="./mural.html">
+          <h3>Comentários</h3>
+        </a>
+      </div>
+
+      <div class="btn-logout" onclick="limparSessao()">
+        <h3>Sair</h3>
+      </div>
+    </div>
+
+    <div class="dash">
+      <div class="caixa">
+        <h1>Questões <span id="questao_atual"></span>/10</h1>
+        <div class="pergunta">
+          <h2 id="pergunta"></h2>
+        </div>
+        <div class="respostas">
+          <div class="resposta" onclick="responder(1)">
+            <h3 id="resposta_1"></h3>
+          </div>
+          <div class="resposta" onclick="responder(2)">
+            <h3 id="resposta_2"></h3>
+          </div>
+          <div class="resposta" onclick="responder(3)">
+            <h3 id="resposta_3"></h3>
+          </div>
+          <div class="resposta" onclick="responder(4)">
+            <h3 id="resposta_4"></h3>
+          </div>
         </div>
       </div>
     </div>
-  </body>
+</body>
 
-  <script>
-    function atualizacaoPeriodica() {
-      obterdados(1);
-      obterdados(2);
-      obterdados(3);
-      obterdados(4);
+<script>
+  function atualizacaoPeriodica() {
+    obterdados(1);
+    obterdados(2);
+    obterdados(3);
+    obterdados(4);
 
-      function sendData() {
-        var http = new XMLHttpRequest();
-        http.open("POST", "http://localhost:3000/api/sendData", false);
-        http.send(null);
-      }
-
-      setInterval(() => {
-        sendData();
-      }, 2000);
-      setTimeout(atualizacaoPeriodica, 5000);
+    function sendData() {
+      var http = new XMLHttpRequest();
+      http.open("POST", "http://localhost:3000/api/sendData", false);
+      http.send(null);
     }
 
-    function obterdados(idAquario) {
-      fetch(`/medidas/tempo-real/${idAquario}`)
-        .then((resposta) => {
-          if (resposta.ok) {
-            resposta.json().then((resposta) => {
-              console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+    setInterval(() => {
+      sendData();
+    }, 2000);
+    setTimeout(atualizacaoPeriodica, 5000);
+  }
 
-              var dados = {
-                temperatura: resposta[0].temperatura,
-              };
+  function obterdados(idAquario) {
+    fetch(`/medidas/tempo-real/${idAquario}`)
+      .then((resposta) => {
+        if (resposta.ok) {
+          resposta.json().then((resposta) => {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-              alertar(resposta[0].temperatura, idAquario);
-            });
-          } else {
-            console.error("Nenhum dado encontrado ou erro na API");
-          }
-        })
-        .catch(function (error) {
-          console.error(
-            `Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`
-          );
-        });
+            var dados = {
+              temperatura: resposta[0].temperatura,
+            };
+
+            alertar(resposta[0].temperatura, idAquario);
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`
+        );
+      });
+  }
+
+  function alertar(temperatura, idAquario) {
+    var limites = {
+      muito_quente: 23,
+      quente: 22,
+      ideal: 20,
+      frio: 10,
+      muito_frio: 5,
+    };
+
+    var classe_temperatura = "cor-alerta";
+
+    if (temperatura >= limites.muito_quente) {
+      classe_temperatura = "cor-alerta perigo-quente";
+      console.log("caiu no 1");
+    } else if (
+      temperatura < limites.muito_quente &&
+      temperatura >= limites.quente
+    ) {
+      classe_temperatura = "cor-alerta alerta-quente";
+      console.log("caiu no 2");
+    } else if (temperatura < limites.quente && temperatura > limites.frio) {
+      classe_temperatura = "cor-alerta ideal";
+      console.log("caiu no 3");
+    } else if (
+      temperatura <= limites.frio &&
+      temperatura > limites.muito_frio
+    ) {
+      classe_temperatura = "cor-alerta alerta-frio";
+      console.log("caiu no 4");
+    } else if (temperatura < limites.min_temperatura) {
+      classe_temperatura = "cor-alerta perigo-frio";
+      console.log("caiu no 5");
     }
 
-    function alertar(temperatura, idAquario) {
-      var limites = {
-        muito_quente: 23,
-        quente: 22,
-        ideal: 20,
-        frio: 10,
-        muito_frio: 5,
-      };
+    var card;
 
-      var classe_temperatura = "cor-alerta";
-
-      if (temperatura >= limites.muito_quente) {
-        classe_temperatura = "cor-alerta perigo-quente";
-        console.log("caiu no 1");
-      } else if (
-        temperatura < limites.muito_quente &&
-        temperatura >= limites.quente
-      ) {
-        classe_temperatura = "cor-alerta alerta-quente";
-        console.log("caiu no 2");
-      } else if (temperatura < limites.quente && temperatura > limites.frio) {
-        classe_temperatura = "cor-alerta ideal";
-        console.log("caiu no 3");
-      } else if (
-        temperatura <= limites.frio &&
-        temperatura > limites.muito_frio
-      ) {
-        classe_temperatura = "cor-alerta alerta-frio";
-        console.log("caiu no 4");
-      } else if (temperatura < limites.min_temperatura) {
-        classe_temperatura = "cor-alerta perigo-frio";
-        console.log("caiu no 5");
-      }
-
-      var card;
-
-      if (idAquario == 1) {
-        temp_aquario_1.innerHTML = temperatura + "°C";
-        card = card_1;
-      } else if (idAquario == 2) {
-        temp_aquario_2.innerHTML = temperatura + "°C";
-        card = card_2;
-      } else if (idAquario == 3) {
-        temp_aquario_3.innerHTML = temperatura + "°C";
-        card = card_3;
-      } else if (idAquario == 4) {
-        temp_aquario_4.innerHTML = temperatura + "°C";
-        card = card_4;
-      }
-
-      // alterando
-      card.className = classe_temperatura;
+    if (idAquario == 1) {
+      temp_aquario_1.innerHTML = temperatura + "°C";
+      card = card_1;
+    } else if (idAquario == 2) {
+      temp_aquario_2.innerHTML = temperatura + "°C";
+      card = card_2;
+    } else if (idAquario == 3) {
+      temp_aquario_3.innerHTML = temperatura + "°C";
+      card = card_3;
+    } else if (idAquario == 4) {
+      temp_aquario_4.innerHTML = temperatura + "°C";
+      card = card_4;
     }
-  </script>
+
+    // alterando
+    card.className = classe_temperatura;
+  }
+</script>
+
 </html>
 
 <script>
@@ -172,7 +180,7 @@
     resposta2: "Discovery",
     resposta3: "Random Access Memories",
     resposta4: "Human After All",
-    resposta_certa: 1,
+    resposta_certa: 3,
   };
 
   var pergunta2 = {
@@ -181,7 +189,7 @@
     resposta2: "Discovery",
     resposta3: "Random Access Memories",
     resposta4: "Human After All",
-    resposta_certa: 1,
+    resposta_certa: 2,
   };
 
   var pergunta3 = {
@@ -208,7 +216,7 @@
     resposta2: "Discovery",
     resposta3: "Random Access Memories",
     resposta4: "Human After All",
-    resposta_certa: 1,
+    resposta_certa: 3,
   };
 
   var pergunta6 = {
@@ -217,7 +225,7 @@
     resposta2: "Discovery",
     resposta3: "Random Access Memories",
     resposta4: "Human After All",
-    resposta_certa: 1,
+    resposta_certa: 4,
   };
 
   var pergunta7 = {
@@ -226,7 +234,7 @@
     resposta2: "Discovery",
     resposta3: "Random Access Memories",
     resposta4: "Human After All",
-    resposta_certa: 1,
+    resposta_certa: 2,
   };
 
   var pergunta8 = {
@@ -253,18 +261,106 @@
     resposta2: "Discovery",
     resposta3: "Random Access Memories",
     resposta4: "Human After All",
-    resposta_certa: 1,
+    resposta_certa: 4,
   };
 
-    function responder() {
-    
-    var resposta = document.getElementById("resposta").value;
-    var pergunta = document.getElementById("pergunta").innerHTML;
-    var resposta_certa = document.getElementById("resposta_certa").innerHTML;
-    var resposta_certa = document.getElementById("resposta_certa").innerHTML;
-    var resposta_certa = document.getElementById("resposta_certa").innerHTML;
-    var resposta_certa = document.getElementById("resposta_certa").innerHTML;
-    var resposta_certa = document.getElementById("resposta_certa").innerHTML;
-    
+  var questao_atual = 1;
+
+  function responder(resposta) {
+    questao_atual.innerHTML = questao_atual;
+    var pergunta = document.getElementById("pergunta");
+    var resposta1 = document.getElementById("resposta1");
+    var resposta2 = document.getElementById("resposta2");
+    var resposta3 = document.getElementById("resposta3");
+    var resposta4 = document.getElementById("resposta4");
+
+    if (questao_atual == 1) {
+      pergunta.innerHTML = pergunta1.pergunta;
+      resposta1.innerHTML = pergunta1.resposta1;
+      resposta2.innerHTML = pergunta1.resposta2;
+      resposta3.innerHTML = pergunta1.resposta3;
+      resposta4.innerHTML = pergunta1.resposta4;
+    } else if (questao_atual == 2) {
+      pergunta.innerHTML = pergunta2.pergunta;
+      resposta1.innerHTML = pergunta2.resposta1;
+      resposta2.innerHTML = pergunta2.resposta2;
+      resposta3.innerHTML = pergunta2.resposta3;
+      resposta4.innerHTML = pergunta2.resposta4;
+    } else if (questao_atual == 3) {
+      pergunta.innerHTML = pergunta3.pergunta;
+      resposta1.innerHTML = pergunta3.resposta1;
+      resposta2.innerHTML = pergunta3.resposta2;
+      resposta3.innerHTML = pergunta3.resposta3;
+      resposta4.innerHTML = pergunta3.resposta4;
+    } else if (questao_atual == 4) {
+      pergunta.innerHTML = pergunta4.pergunta;
+      resposta1.innerHTML = pergunta4.resposta1;
+      resposta2.innerHTML = pergunta4.resposta2;
+      resposta3.innerHTML = pergunta4.resposta3;
+      resposta4.innerHTML = pergunta4.resposta4;
+    } else if (questao_atual == 5) {
+      pergunta.innerHTML = pergunta5.pergunta;
+      resposta1.innerHTML = pergunta5.resposta1;
+      resposta2.innerHTML = pergunta5.resposta2;
+      resposta3.innerHTML = pergunta5.resposta3;
+      resposta4.innerHTML = pergunta5.resposta4;
+    } else if (questao_atual == 6) {
+      pergunta.innerHTML = pergunta6.pergunta;
+      resposta1.innerHTML = pergunta6.resposta1;
+      resposta2.innerHTML = pergunta6.resposta2;
+      resposta3.innerHTML = pergunta6.resposta3;
+      resposta4.innerHTML = pergunta6.resposta4;
+    } else if (questao_atual == 7) {
+      pergunta.innerHTML = pergunta7.pergunta;
+      resposta1.innerHTML = pergunta7.resposta1;
+      resposta2.innerHTML = pergunta7.resposta2;
+      resposta3.innerHTML = pergunta7.resposta3;
+      resposta4.innerHTML = pergunta7.resposta4;
+    } else if (questao_atual == 8) {
+      pergunta.innerHTML = pergunta8.pergunta;
+      resposta1.innerHTML = pergunta8.resposta1;
+      resposta2.innerHTML = pergunta8.resposta2;
+      resposta3.innerHTML = pergunta8.resposta3;
+      resposta
+    } else if(questao_atual == 9){
+      pergunta.innerHTML = pergunta9.pergunta;
+      resposta1.innerHTML = pergunta9.resposta1;
+      resposta2.innerHTML = pergunta9.resposta2;
+      resposta3.innerHTML = pergunta9.resposta3;
+      resposta4.innerHTML = pergunta9.resposta4;
+    } else if(questao_atual == 10){
+      pergunta.innerHTML = pergunta10.pergunta;
+      resposta1.innerHTML = pergunta10.resposta1;
+      resposta2.innerHTML = pergunta10.resposta2;
+      resposta3.innerHTML = pergunta10.resposta3;
+      resposta4.innerHTML = pergunta10.resposta4;
+    } else if(questao_atual == 11){
+      pergunta.innerHTML = `<h1>Muito bem! Sua pontuação final foi ${pontos}/10</h1>`;
+      return;
     }
+
+    if (resposta == pergunta1.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta2.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta3.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta4.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta5.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta6.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta7.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta8.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta9.resposta_certa) {
+      pontos++;
+    } else if (resposta == pergunta10.resposta_certa) {
+      pontos++;
+    }
+
+    questao_atual++;
+  }
 </script>

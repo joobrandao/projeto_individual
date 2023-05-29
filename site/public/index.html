@@ -25,7 +25,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#criador">Criador</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#footer">Contato</a></li>
             <a href="cadastro.html"
               ><img src="./assets/imagensTeste/guitarrista.png" alt=""
             /></a>
@@ -36,32 +36,32 @@
       <h1 id="gancho">
         <p>Explore novos ritmos e vozes no mundo da música!</p>
 
-        <p style="font-size: 1.5rem">
+        <!-- <p style="font-size: 1.5rem">
           Nosso blog é um espaço dedicado a explorar e compartilhar a
           diversidade de estilos musicais e artistas, celebrando a riqueza e a
           singularidade da música em suas múltiplas formas.
-        </p>
+        </p> -->
         <a href="#sobre"><button class="botao">DESCOBRIR</button></a>
       </h1>
     </div>
 
     <div class="container" id="sobre">
       <div class="boxT" id="boxTsobre">
-        <p style="font-size: 1.8rem">
+        <p style="font-size: 2rem">
           Musica é <span class="typed-text" id="typed-text"></span
           ><span class="cursor">&nbsp;</span>
         </p>
-        <h3>
+        <h2 style="font-family: 'Poppins', sans-serif">
           Nosso blog é um espaço dedicado a explorar e compartilhar a
           diversidade de estilos musicais e artistas, celebrando a riqueza e a
           singularidade da música em suas múltiplas formas.
-        </h3>
-        <p>
+        </h2>
+        <!-- <p>
           Nosso objetivo é levar aos nossos leitores novos horizontes musicais,
           apresentando estilos e artistas que talvez não conheçam, explorando
           suas características distintas e oferecendo uma experiência única e
           enriquecedora na descoberta de novas formas de expressão musical.
-        </p>
+        </p> -->
         <a href="Cadastro.html"><button class="botao">DESCOBRIR</button></a>
       </div>
       <div class="comentarios">
@@ -77,7 +77,7 @@
       </div>
     </div>
 
-    <div class="container" id="criador">
+    <!-- <div class="container" id="criador">
       <div class="boxT" id="boxTcriador">
         <div class="imgsEu">
           <img src="./assets/imgs/eu_perfil_01.png" alt="" />
@@ -99,9 +99,34 @@
           <img src="./assets/imgs/metallica_circulo.png" alt="" />
         </div>
       </div>
+    </div> -->
+
+    <div class="container" id="criador">
+      <div class="cardCriador">
+        <img src="./assets/imgs/eu1.jpeg" alt="" />
+        <h3 style="font-size: 1.5rem;">
+          Guitarrista APAIXONADO por musica e tecnologia, que decidiu criar um
+          blog para compartilhar a beleza dos diferentes estilos musicais!
+        </h3>
+      </div>
+      <div class="cardArtistas">
+        <img src="./assets/imgs/john_circulo.png" alt="" />
+        <h3>John Mayer</h3>
+        <p>John Mayer é um talentoso cantor, compositor e guitarrista americano, conhecido por sua habilidade única de fundir elementos do pop, blues e rock em suas emocionantes performances musicais.</p>
+      </div>
+      <div class="cardArtistas">
+        <img src="./assets/imgs/bruno_circulo.png" alt="" />
+        <h3>Bruno Mars</h3>
+        <p>Bruno Mars é um artista taletoso e carismático reconhecido por sua incrível habilidade de incorporar umavariedade de gêneros musicais criando hits contagiantes e memoráveis.</p>
+      </div>
+      <div class="cardArtistas">
+        <img src="./assets/imgs/sola_circulo.png" alt="" />
+        <h3>Projeto Sola</h3>
+        <p>O Projeto Sola é uma manifestação artística composta por 4 músicos talentosos que busca levar a mensagem do evangelho por meio da música, tocando vidas e espalhando a alegria da fé.</p>
+      </div>
     </div>
 
-    <div class="footer">
+    <div class="footer" id="footer">
       <a href="Index.html" target="_blank"
         ><img src="./assets/imagensTeste/home-icon-silhouette.png" alt=""
       /></a>
@@ -157,18 +182,12 @@
 
 <script>
   function enviarMensagem() {
-
-
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var assuntoVar = input_assunto.value;
     var mensagemVar = comentarioUsuario.value;
 
-    if (
-      assuntoVar == "" ||
-      mensagemVar == ""
-    ) {
-
+    if (assuntoVar == "" || mensagemVar == "") {
       finalizarAguardar();
       return false;
     } else {
@@ -192,7 +211,6 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-
           setTimeout(() => {
             window.location = "login.html";
           }, "2000");
@@ -215,4 +233,3 @@
     cardErro.style.display = "none";
   }
 </script>
-

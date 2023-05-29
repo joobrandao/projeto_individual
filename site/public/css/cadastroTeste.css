@@ -1,171 +1,171 @@
 #cadastro {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 #boxTcadastro {
-background-color: #6f1b2c;
-width: 35rem;
-height: 35rem;
-color: rgb(248,219,126);
-display: flex;
-justify-content: justify;
-align-items: center;
-text-align: center;
-font-size: 1.5rem;
-flex-direction: column;
-gap: 1rem;
-position: absolute;
-top: 0;
-margin-top: 8.5rem;
+  background-color: #251870;
+  width: 35rem;
+  height: 35rem;
+  color: white;
+  display: flex;
+  justify-content: justify;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 0;
+  margin-top: 8.5rem;
 }
 
 #boxTcadastro h1 {
-    font-size: 3rem;
-    color: rgb(248,219,126);
+  font-size: 3rem;
+  color: white;
 }
 
 #boxTcadastro p {
-    font-size: 1.5rem;
-    color: rgb(248,219,126);
+  font-size: 1.5rem;
+  color: white;
+  font-family: "Poppins", sans-serif;
 }
 
 #boxTcadastro a {
-    color: rgb(248,219,126);
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 #boxTcadastro a:hover {
-    color: #ec6349;
-    text-decoration: underline;
+  color: #ec6349;
+  text-decoration: underline;
 }
 
 #boxTcadastro button {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-bottom: 1rem;
+  background-color: white;
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 #boxTcadastro button:hover {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: #8d7cf2;
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #boxTcadastro button:active {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #boxTcadastro button:focus {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #boxTcadastro button:visited {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #boxTcadastro button:link {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #boxTcadastro button:after {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #boxTcadastro button:before {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #boxTcadastro button:visited:hover {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #boxTcadastro button:visited:active {
-    background-color: rgb(225, 215, 204);
-    color: rgb(9, 0, 10);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
+  background-color: rgb(225, 215, 204);
+  color: rgb(9, 0, 10);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 input {
-    width: 20rem;
-    height: 1.5rem;
-    border-radius: 5px;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1.2rem;
+  width: 20rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.2rem;
 }
 
-
 select {
-    width: 20rem;
-    height: 2rem;
-    border-radius: 5px;
-    border: none;
-    font-size: 1.2rem;
+  width: 20rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
 }
