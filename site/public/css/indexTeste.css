@@ -120,11 +120,13 @@ body {
 .nav_bar ul li a {
   color: white;
   font-weight: bold;
+  transition: 100ms linear;
 }
 
 .nav_bar ul li a:hover {
   color: #ec6349;
-  font-size: 1.7rem;
+  scale: 0.9;
+
 }
 
 #sobre {
@@ -147,20 +149,9 @@ body {
   margin-left: 2rem;
 }
 
-.comentario1 {
-  width: 60%;
-  height: 50%;
-  text-align: start;
-  color: #251870;
-}
-
-.comentario2 {
-  width: 55%;
-  height: 50%;
-  text-align: start;
-  align-self: flex-end;
-  margin-top: 5rem;
-  color: #251870;
+.comentarios iframe {
+  width: 100%;
+  height: 100%;
 }
 
 #criador {
@@ -349,16 +340,18 @@ body {
   flex-direction: column;
   gap: 2rem;
   margin-top: 2rem;
-  width: 20rem;
-  height: 30rem;
+  width: 25rem;
+  height: 32rem;
   background-color: #140d3d;
   color: white;
   padding: 1rem;
+  border-radius: 0.5rem;
+  border-color: #140d3d;
+  transition: 500ms linear;
 }
 
 .cardCriador img {
-  width: 10rem;
-  height: 15rem;
+  width: 25rem;
   border-radius: 1rem;
 }
 
@@ -368,13 +361,18 @@ body {
 }
 
 .cardCriador p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .cardCriador a {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.cardCridador:hover {
+  transform: scale(1.05);
+  box-shadow: #140d3d 7px 7px 7px 7px ;
 }
 
 .cardArtistas {
@@ -390,11 +388,13 @@ body {
   color: white;
   padding: 1rem;
   transition: 200ms linear;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   color: #140d3d;
 }
 
 .cardArtistas:hover {
   transform: scale(1.05); 
+  box-shadow: 0 0 40px rgba(236, 99, 73, 0.5);
 }
 
 .cardArtistas img {
@@ -404,11 +404,11 @@ body {
 }
 
 .cardArtistas h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .cardArtistas p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
