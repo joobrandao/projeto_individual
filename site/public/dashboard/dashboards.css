@@ -1,8 +1,8 @@
-/* pagina mural */
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&family=Poppins:wght@300&family=Shadows+Into+Light&display=swap");
 
 *,
 body {
-  font-family: "Exo 2", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .label-captura {
@@ -11,11 +11,11 @@ body {
 }
 
 .janela {
-  background-color: #310a26;
+  background-color: #251870;
 }
 
 .dash-right {
-background-color: #310a26;
+background-color: #251870;
 }
 
 .dash-right .avisos {
@@ -23,6 +23,7 @@ background-color: #310a26;
   /* border: 3px solid pink; */
   color: rgb(216, 216, 216);
   font-family: "Exo 2", sans-serif;
+  padding-right: 10rem;
 }
 
 .dash-right .avisos .container {
@@ -127,9 +128,11 @@ background-color: #310a26;
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #310a26;
+  background-color: #251870;
   height: 100vh;
   overflow: auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .regua {
@@ -235,9 +238,11 @@ background-color: #310a26;
 }
 
 .tituloGraficos {
-  color: rgb(216, 216, 216);
+  color: white;
   display: flex;
   justify-content: center;
+  font-size: 2rem;
+  padding-top: 1rem;
 }
 
 .btn-chart {
@@ -282,4 +287,61 @@ background-color: #310a26;
 canvas {
   width: 100% !important;
   height: 100% !important;
+}
+
+#cardPercentual {
+  text-align: center;
+  margin-left: 1.5rem;
+  margin-top: 10rem;
+}
+
+#cardPercentual h3 {
+  font-size: 2.5rem;
+}
+
+#divQuiz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+#h1questao {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.caixa button {
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: 0;
+  background-color: #ec6349;
+  color: white;
+  cursor: pointer;
+}
+
+#pergunta {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.resposta {
+  font-size: 1.3rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 0;
+  background-color: #ec6349;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  width: 20rem;
+  height: 2rem;
+}
+
+.laranjinha{
+  color: #ec6349;
 }

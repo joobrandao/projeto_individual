@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="dashboards.css" />
+    <link rel="stylesheet" href="../css/indexTeste.css">
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -62,24 +63,15 @@
       </div>
 
       <div class="dash">
-        <div class="btns-dash">
-          
-          <button
-            class="btn-chart btn-pink"
-            onclick="exibirAquario(1)"
-            id="btnAquario1"
-          >
-            Gêneros mais votados!
-          </button>
-          <button
-            class="btn-chart btn-white"
-            onclick="exibirAquario(2)"
-            id="btnAquario2"
-          >
-            Melhores musicas de 2023!
-          </button>
+        <div class="cardArtistas" id="cardPercentual">
+          <h3>Percentual de acerto dos nossos usuários no quiz!</h3>
+          <p style="font-family: 'Poppins', sans-serif;">Nossos usuários acertam em média, <span style="font-size: 2rem;">x%</span> das perguntas do quiz!</p>
         </div>
+
+
         <div id="graficos">
+
+         
           <div id="grafico1" class="display-block">
             <h3 class="tituloGraficos">
               <span id="tituloAquario1">123</span>
@@ -87,8 +79,11 @@
             <div class="graph">
               <canvas id="myChartCanvas1"></canvas>
             </div>
-            <div class="label-captura">
-              <p id="avisoCaptura1" style="color: white"></p>
+            <h3 class="tituloGraficos">
+              <span id="tituloAquario2">123</span>
+            </h3>
+            <div class="graph">
+              <canvas id="myChartCanvas2"></canvas>
             </div>
           </div>
 
@@ -98,9 +93,6 @@
             </h3>
             <div class="graph">
               <canvas id="myChartCanvas2"></canvas>
-            </div>
-            <div class="label-captura">
-              <p id="avisoCaptura2" style="color: white"></p>
             </div>
           </div>
         </div>
@@ -126,7 +118,7 @@
   function alterarTitulo(idAquario) {
     var tituloAquario = document.getElementById(`tituloAquario${idAquario}`);
     tituloAquario.innerHTML =
-      "Gêneros musicais mais cadastrados por nosso usuários!";
+      "Gêneros musicais mais cadastrados por nossos usuários!";
   }
 
   function exibirAquario(idAquario) {

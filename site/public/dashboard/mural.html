@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="./dashboards.css">
+    <link rel="stylesheet" href="../css/indexTeste.css">
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -58,7 +59,7 @@
 
             <div class="avisos">
                 <div class="container">
-                    <h1>Publicar um aviso</h1>
+                    <h1 style="font-family: 'Shadows Into Light'; font-size: 3rem;">Bem vindo à área de comentários, <span id="b_usuario2" style="font-family: 'Shadows Into Light'; color: #ec6349;">usuário</span>!</h1>
                     <div class="div-form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
@@ -114,6 +115,7 @@
 <script>
     
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_usuario2.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
         document.getElementById("form_postagem").reset();

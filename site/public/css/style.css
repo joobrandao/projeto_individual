@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&family=Poppins:wght@300&family=Shadows+Into+Light&display=swap");
 
 body {
   margin: 0;
@@ -236,6 +236,7 @@ input {
 .janela {
   display: flex;
   width: 100vw;
+  background-color: #251870;
 }
 
 .header-left a {
@@ -254,16 +255,15 @@ input {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #6f1b2c;
-  background-color: #f8db7e;
-
+  border-right: 2px solid #ec6349;
+  background-color: #4F32F0;
 }
 
 .dash-right {
   display: flex;
   width: 80%;
   height: fit-content;
-  background-color: #161618;
+  background-color: #251870;
   position: relative;
   top: 0;
   left: 25%;
@@ -345,4 +345,25 @@ input {
 
 .simulador .container {
   flex-direction: column
+}
+
+#graficos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-left: 8rem;
+}
+
+.caixa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 40rem;
+  width: 50rem;
+  gap: 3.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.2);
 }

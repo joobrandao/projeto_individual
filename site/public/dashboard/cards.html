@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="dashboards.css" />
+  <link rel="stylesheet" href="../css/indexTeste.css">
 
   <script src="../js/funcoes.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -27,6 +28,7 @@
       <div class="hello">
         <h3>Bem vindo, <span id="b_usuario">usuário</span>!</h3>
       </div>
+
 
       <div class="btn-nav">
         <h3>Quiz</h3>
@@ -48,28 +50,14 @@
         <h3>Sair</h3>
       </div>
     </div>
+<span></span>
+    <div class="dash" id="divQuiz" style="color: white;">
+        <div class="caixa" id="caixaQuiz" style="background-color: black;">
+          <h1 style="font-size: 3rem;">Bem vindo ao nosso <span>Quiz Musical</span></h1>
+          <h2>Teste seus conhecimentos gerais sobre música!</h2>
+          <button onclick="iniciar()">Iniciar Quiz!</button>
+              </div>
 
-    <div class="dash">
-      <div class="caixa">
-        <h1>Questões <span id="questao_atual"></span>/10</h1>
-        <div class="pergunta">
-          <h2 id="pergunta"></h2>
-        </div>
-        <div class="respostas">
-          <div class="resposta" onclick="responder(1)">
-            <h3 id="resposta_1"></h3>
-          </div>
-          <div class="resposta" onclick="responder(2)">
-            <h3 id="resposta_2"></h3>
-          </div>
-          <div class="resposta" onclick="responder(3)">
-            <h3 id="resposta_3"></h3>
-          </div>
-          <div class="resposta" onclick="responder(4)">
-            <h3 id="resposta_4"></h3>
-          </div>
-        </div>
-      </div>
     </div>
 </body>
 
@@ -174,49 +162,71 @@
 </html>
 
 <script>
-  var pergunta1 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
-    resposta_certa: 3,
-  };
+function iniciar(){
+    var caixa = document.getElementById("caixaQuiz");
+    caixa.innerHTML = `      <h1 id="h1questao">Questões <span id="questao_atual">1</span>/10</h1>
+      <div class="pergunta">
+        <h2 id="pergunta">Qual banda lançou o álbum Dark Side of the Moon?</h2>
+      </div>
+      <div class="respostas">
+        <div class="resposta" onclick="responder(1)">
+          <h3 id="resposta_1">Led Zeppelin</h3>
+        </div>
+        <div class="resposta" onclick="responder(2)">
+          <h3 id="resposta_2">Pink Floyd</h3>
+        </div>
+        <div class="resposta" onclick="responder(3)">
+          <h3 id="resposta_3">The Rolling Stones</h3>
+        </div>
+        <div class="resposta" onclick="responder(4)">
+          <h3 id="resposta_4">The Beatles</h3>
+        </div>
+      </div>`;
+  }
 
-  var pergunta2 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
+  var pergunta1 = {
+    pergunta: "Qual banda lançou o álbum Dark Side of the Moon?",
+    resposta1: "Led Zeppelin",
+    resposta2: "Pink Floyd",
+    resposta3: "The Rolling Stones",
+    resposta4: "The Beatles",
     resposta_certa: 2,
   };
 
+  var pergunta2 = {
+    pergunta: "Qual instrumento musical é conhecido como rei dos instrumentos?",
+    resposta1: "Piano",
+    resposta2: "Guitarra",
+    resposta3: "Violino",
+    resposta4: "Bateria",
+    resposta_certa: 1,
+  };
+
   var pergunta3 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
+    pergunta: "Qual é o nome do vocalista da banda U2?",
+    resposta1: "Bono",
+    resposta2: "Sting",
+    resposta3: "Freddie Mercury",
+    resposta4: "Chris Martin",
     resposta_certa: 1,
   };
 
   var pergunta4 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
-    resposta_certa: 1,
+    pergunta: "Quem é conhecido como Rei do Pop?",
+    resposta1: "Justin Bieber",
+    resposta2: " Elvis Presley",
+    resposta3: "Michael Jackson",
+    resposta4: "Justin Timberlake",
+    resposta_certa: 3,
   };
 
   var pergunta5 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
-    resposta_certa: 3,
+    pergunta: "Qual o nome da cantora que lançou o álbum `21`?",
+    resposta1: "Taylor Swift",
+    resposta2: "Adele",
+    resposta3: "Beyoncé",
+    resposta4: "Rihanna",
+    resposta_certa: 2,
   };
 
   var pergunta6 = {
@@ -225,59 +235,62 @@
     resposta2: "Discovery",
     resposta3: "Random Access Memories",
     resposta4: "Human After All",
-    resposta_certa: 4,
+    resposta_certa: 1,
   };
 
   var pergunta7 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
-    resposta_certa: 2,
-  };
-
-  var pergunta8 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
-    resposta_certa: 1,
-  };
-
-  var pergunta9 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
-    resposta_certa: 1,
-  };
-
-  var pergunta10 = {
-    pergunta: "Qual o nome do primeiro álbum do Daft Punk?",
-    resposta1: "Homework",
-    resposta2: "Discovery",
-    resposta3: "Random Access Memories",
-    resposta4: "Human After All",
+    pergunta: "Qual a música mais vendida de todos os tempos?",
+    resposta1: "Smells Like Teen Spirit - Nirvana",
+    resposta2: "Hey Jude - The Beatles",
+    resposta3: "Imagine - John Lennon",
+    resposta4: "Bohemian Rhapsody - Queen",
     resposta_certa: 4,
   };
 
-  var questao_atual = 1;
+  var pergunta8 = {
+    pergunta: "Qual é o nome do guitarrista conhecido por sua técnica de tapping e pelo álbum Surfing with the Alien?",
+    resposta1: "Eddie Van Halen",
+    resposta2: "Jimi Hendrix",
+    resposta3: "Joe Satriani",
+    resposta4: "Jimmy Page",
+    resposta_certa: 3,
+  };
+
+  var pergunta9 = {
+    pergunta: "Qual é o gênero musical originário dos Estados Unidos que mistura elementos de jazz, blues e música clássica?",
+    resposta1: "Rock and Roll",
+    resposta2: "Raggae",
+    resposta3: "R&B",
+    resposta4: "Jazz",
+    resposta_certa: 4,
+  };
+
+  var pergunta10 = {
+    pergunta: "Quem são os artistas que lançaram a música Tadow?",
+    resposta1: "Masego e FKJ",
+    resposta2: "Masego e H.E.R",
+    resposta3: "Masego e Ari Lennox",
+    resposta4: "Masego e SZA",
+    resposta_certa: 1,
+  };
+
+  var pontos = 0;
+  var questao_atual = 2;
+  var respostasCertas = [2, 1, 1, 3, 2, 1, 4, 3, 4, 1]
 
   function responder(resposta) {
-    questao_atual.innerHTML = questao_atual;
+    document.getElementById("questao_atual").innerHTML = questao_atual;
     var pergunta = document.getElementById("pergunta");
-    var resposta1 = document.getElementById("resposta1");
-    var resposta2 = document.getElementById("resposta2");
-    var resposta3 = document.getElementById("resposta3");
-    var resposta4 = document.getElementById("resposta4");
+    var resposta1 = document.getElementById("resposta_1");
+    var resposta2 = document.getElementById("resposta_2");
+    var resposta3 = document.getElementById("resposta_3");
+    var resposta4 = document.getElementById("resposta_4");
+    var h1questao = document.getElementById("h1questao");
 
     if (questao_atual == 1) {
       pergunta.innerHTML = pergunta1.pergunta;
       resposta1.innerHTML = pergunta1.resposta1;
-      resposta2.innerHTML = pergunta1.resposta2;
+      resposta2.innerHTML = pergunta1.resposta2;  
       resposta3.innerHTML = pergunta1.resposta3;
       resposta4.innerHTML = pergunta1.resposta4;
     } else if (questao_atual == 2) {
@@ -306,59 +319,51 @@
       resposta4.innerHTML = pergunta5.resposta4;
     } else if (questao_atual == 6) {
       pergunta.innerHTML = pergunta6.pergunta;
-      resposta1.innerHTML = pergunta6.resposta1;
-      resposta2.innerHTML = pergunta6.resposta2;
-      resposta3.innerHTML = pergunta6.resposta3;
-      resposta4.innerHTML = pergunta6.resposta4;
-    } else if (questao_atual == 7) {
-      pergunta.innerHTML = pergunta7.pergunta;
-      resposta1.innerHTML = pergunta7.resposta1;
-      resposta2.innerHTML = pergunta7.resposta2;
-      resposta3.innerHTML = pergunta7.resposta3;
-      resposta4.innerHTML = pergunta7.resposta4;
+        resposta1.innerHTML = pergunta6.resposta1;
+        resposta2.innerHTML = pergunta6.resposta2;
+        resposta3.innerHTML = pergunta6.resposta3;
+        resposta4.innerHTML = pergunta6.resposta4;
+      } else if (questao_atual == 7) {
+        pergunta.innerHTML = pergunta7.pergunta;
+        resposta1.innerHTML = pergunta7.resposta1;
+        resposta2.innerHTML = pergunta7.resposta2;
+        resposta3.innerHTML = pergunta7.resposta3;
+        resposta4.innerHTML = pergunta7.resposta4;
     } else if (questao_atual == 8) {
       pergunta.innerHTML = pergunta8.pergunta;
       resposta1.innerHTML = pergunta8.resposta1;
       resposta2.innerHTML = pergunta8.resposta2;
       resposta3.innerHTML = pergunta8.resposta3;
-      resposta
-    } else if(questao_atual == 9){
+      resposta;
+    } else if (questao_atual == 9) {
       pergunta.innerHTML = pergunta9.pergunta;
       resposta1.innerHTML = pergunta9.resposta1;
       resposta2.innerHTML = pergunta9.resposta2;
       resposta3.innerHTML = pergunta9.resposta3;
       resposta4.innerHTML = pergunta9.resposta4;
-    } else if(questao_atual == 10){
+    } else if (questao_atual == 10) {
       pergunta.innerHTML = pergunta10.pergunta;
       resposta1.innerHTML = pergunta10.resposta1;
       resposta2.innerHTML = pergunta10.resposta2;
       resposta3.innerHTML = pergunta10.resposta3;
       resposta4.innerHTML = pergunta10.resposta4;
-    } else if(questao_atual == 11){
-      pergunta.innerHTML = `<h1>Muito bem! Sua pontuação final foi ${pontos}/10</h1>`;
-      return;
+    } 
+
+    if (resposta == respostasCertas[questao_atual - 2]) {
+      pontos++;
     }
 
-    if (resposta == pergunta1.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta2.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta3.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta4.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta5.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta6.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta7.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta8.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta9.resposta_certa) {
-      pontos++;
-    } else if (resposta == pergunta10.resposta_certa) {
-      pontos++;
+    if (questao_atual == 11) {
+      pergunta.innerHTML = `<h1 style="font-size: 3rem; background-color: white; color: black; border-radius: 1rem">Muito bem! Sua pontuação final foi <span id="questao_atual" class="laranjinha">${pontos}</span>/10</h1>`;
+      h1questao.innerHTML = `Você chegou ao fim do quiz!`
+    
+      
+      var respostasDivs = document.getElementsByClassName("resposta");
+    for (var i = 0; i < respostasDivs.length; i++) {
+      respostasDivs[i].style.display = "none";
+    }
+      
+      return;
     }
 
     questao_atual++;

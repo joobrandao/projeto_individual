@@ -122,4 +122,8 @@ join album on idArtista = fkArtista
 join musica on fkMusica = idMusica
 where idArtista = 101;
 
-select generoMusical, count(generoMusical) as qtdVotos from usuario group by generoMusical;
+
+
+select generoMusical, count(generoMusical) as qtdVotos from usuario group by generoMusical; 
+use projeto_individual;
+select * from usuario; 
