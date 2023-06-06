@@ -16,6 +16,10 @@ router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
 
+router.post("/cadastrarQuiz", function (req, res) {
+    usuarioController.cadastrarQuiz(req, res);
+})
+
 router.post("/enviarMensagem", function (req, res) {
     usuarioController.enviarMensagem(req, res);
 })

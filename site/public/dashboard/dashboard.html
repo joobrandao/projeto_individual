@@ -66,7 +66,7 @@
       <div class="dash">
         <div class="cardArtistas" id="cardPercentual">
           <h3>Percentual de acerto dos nossos usuários no quiz!</h3>
-          <p style="font-family: 'Poppins', sans-serif;">Nossos usuários acertam em média, <span style="font-size: 2rem;">x%</span> das perguntas do quiz!</p>
+          <p style="font-family: 'Poppins', sans-serif;">Nossos usuários acertam em média, <span style="font-size: 2rem;" id="porcentagemQuiz">x%</span> das perguntas do quiz!</p>
         </div>
 
 
@@ -101,14 +101,14 @@
 
   let proximaAtualizacao;
 
-  window.onload = obterDadosGraficos();
+  window.onload = obterDadosGraficos(), obterDadosQuiz();
 
   function obterDadosGraficos() {
     obterDadosGrafico(1);
     obterDadosGrafico(2);
   }
 
-  verificar_autenticacao();
+
 
   function alterarTitulo(idAquario) {
     var tituloAquario = document.getElementById(`tituloAquario${idAquario}`);
@@ -183,6 +183,71 @@
         );
       });
   }
+
+  //AQUI ESTOU BUSCANDO OS DADOS DA MÉDIA DO QUIZ
+
+  function obterDadosQuiz(idAquario) {
+  const porcentagemQuiz = document.getElementById("porcentagemQuiz");
+
+  fetch(`/medidas/quiz/${idAquario}`, { cache: "no-store" })
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+
+          const media = resposta[0].media_porcentagem_acerto;
+
+
+          console.log(resposta, 'AQUI OS DADOS DO QUIZ OH');
+          console.log('Média:', media);
+
+          porcentagemQuiz.innerText = media + "%";
+
+        });
+      } else {
+        console.error("Nenhum dado encontrado ou erro na API");
+      }
+    })
+    .catch(function (error) {
+      console.error(
+        `Erro na obtenção dos dados p/ media do quiz: ${error.message}`
+      );
+    });
+}
+
+
+//   function exibirMediaQuiz(idAquario) {
+//   const porcentagemQuiz = document.getElementById("porcentagemQuiz");
+
+//   fetch(`/medidas/quiz/${idAquario}`, { cache: "no-store" })
+//     .then(function (response) {
+//       if (response.ok) {
+//         response.json().then(function (resposta) {
+//           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+//           resposta.reverse();
+
+//           // Obter a média
+//           const media = resposta[0]; // Considerando que a média está na primeira posição do array
+
+//           console.log(resposta, 'AQUI OS DADOS DO QUIZ OH');
+//           console.log('Média:', media);
+
+//           // Exibir a média no elemento HTML
+//           porcentagemQuiz.innerText = `${media}`;
+
+//         });
+//       } else {
+//         console.error("Nenhum dado encontrado ou erro na API");
+//       }
+//     })
+//     .catch(function (error) {
+//       console.error(
+//         `Erro na obtenção dos dados p/ media do quiz: ${error.message}`
+//       );
+//     });
+// }
+
 
   // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // Configura o gráfico (cores, tipo, etc), materializa-o na página e,

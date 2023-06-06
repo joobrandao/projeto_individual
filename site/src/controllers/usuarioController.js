@@ -96,11 +96,43 @@ function cadastrar(req, res) {
   }
 }
 
+function cadastrarQuiz(req, res) {
+  // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+  var pontos = req.body.pontosServer;
+  var idUsuario = req.body.idUsuarioServer;
+
+  console.log(pontos);
+  console.log(idUsuario);
+  // Faça as validações dos valores
+  if (pontos == undefined) {
+    res.status(400).send("Seus pontos estão undefined!");
+  } else if (idUsuario == undefined) {
+    res.status(400).send("Seu idUsuario está undefined!");
+  } 
+  else {
+    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+    usuarioModel
+      .cadastrarQuiz(pontos, idUsuario)
+      .then(function (resultado) {
+        res.json(resultado);
+      })
+      .catch(function (erro) {
+        console.log(erro);
+        console.log(
+          "\nHouve um erro ao realizar o cadastro dos pontos! Erro: ",
+          erro.sqlMessage
+        );
+        res.status(500).json(erro.sqlMessage);
+      });
+  }
+}
+
 module.exports = {
   entrar,
   cadastrar,
   listar,
   testar,
+  cadastrarQuiz,
 };
 
 function enviarMensagem(req, res) {
@@ -137,4 +169,5 @@ module.exports = {
   enviarMensagem,
   listar,
   testar,
+  cadastrarQuiz,
 };

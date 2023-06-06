@@ -31,6 +31,16 @@ function cadastrar(nome, email, genero, senha) {
     return database.executar(instrucao);
 }
 
+function cadastrarQuiz(pontos, idUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarQuiz():", pontos, idUsuario);
+
+    var instrucao = `
+    update quiz set pontuacao = ${pontos} where fkUsuario = ${idUsuario};  
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 function enviarMensagem(assunto, mensagem) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", assunto, mensagem);
     
@@ -48,4 +58,5 @@ module.exports = {
     cadastrar,
     enviarMensagem,
     listar,
+    cadastrarQuiz,
 };
