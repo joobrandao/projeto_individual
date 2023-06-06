@@ -5,8 +5,8 @@ function listar() {
     var instrucao = `
         SELECT 
             a.id AS idAviso,
-            a.titulo,
-            a.descricao,
+            a.assunto,
+            a.mensagem,
             a.fkUsuario,
             u.idUsuario AS idUsuario,
             u.nome,
@@ -25,9 +25,9 @@ function pesquisarDescricao(texto) {
     var instrucao = `
         SELECT 
             a.id AS idAviso,
-            a.titulo,
-            a.descricao,
-            a.fk_usuario,
+            a.assunto,
+            a.mensagem,
+            a.fkUsuario,
             u.id AS idUsuario,
             u.nome,
             u.email,
@@ -35,7 +35,7 @@ function pesquisarDescricao(texto) {
         FROM comentario a
             INNER JOIN usuario u
                 ON a.fkUsuario = u.idUsuario
-        WHERE a.descricao LIKE '${texto}';
+        WHERE a.mensagem LIKE '${texto}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -46,8 +46,8 @@ function listarPorUsuario(idUsuario) {
     var instrucao = `
         SELECT 
             a.id AS idAviso,
-            a.titulo,
-            a.descricao,
+            a.assunto,
+            a.mensagem,
             a.fkUsuario,
             u.idUsuario AS idUsuario,
             u.nome,
@@ -62,10 +62,10 @@ function listarPorUsuario(idUsuario) {
     return database.executar(instrucao);
 }
 
-function publicar(titulo, descricao, idUsuario) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, descricao, idUsuario);
+function publicar(assunto, mensagem, idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", assunto, mensagem, idUsuario);
     var instrucao = `
-        INSERT INTO comentario (titulo, descricao, fkUsuario) VALUES ('${titulo}', '${descricao}', ${idUsuario});
+        INSERT INTO comentario (assunto, mensagem, fkUsuario) VALUES ('${assunto}', '${mensagem}', ${idUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

@@ -23,38 +23,34 @@
 <body>
   <div class="janela">
     <div class="header-left">
-      <img src="../assets/imagensTeste/logo_pi.png" alt="">
-
-      <div class="hello">
-        <h3>Bem vindo, <span id="b_usuario">usuário</span>!</h3>
-      </div>
+      <img src="../assets/imagensTeste/logo_pi.png" alt="" id="imgLogo">
 
 
-      <div class="btn-nav">
+
+      
         <h3>Quiz</h3>
-      </div>
+    
 
-      <div class="btn-nav-white">
+      
         <a href="./dashboard.html">
           <h3>Gráficos</h3>
         </a>
-      </div>
+      
 
-      <div class="btn-nav-white">
+      
         <a href="./mural.html">
           <h3>Comentários</h3>
         </a>
-      </div>
+  
 
-      <div class="btn-logout" onclick="limparSessao()">
-        <h3>Sair</h3>
-      </div>
+      
+        <img src="../assets/imagensTeste/logout.png" alt="" onclick="limparSessao()" id="imgLogout">
+  
     </div>
-<span></span>
     <div class="dash" id="divQuiz" style="color: white;">
-        <div class="caixa" id="caixaQuiz" style="background-color: black;">
-          <h1 style="font-size: 3rem;">Bem vindo ao nosso <span>Quiz Musical</span></h1>
-          <h2>Teste seus conhecimentos gerais sobre música!</h2>
+        <div class="caixa" id="caixaQuiz">
+          <h1 style="font-size: 3.5rem;">Bem vindo ao nosso <span>Quiz Musical</span></h1>
+          <h2 style="font-size: 2rem;">Teste seus conhecimentos gerais sobre música!</h2>
           <button onclick="iniciar()">Iniciar Quiz!</button>
               </div>
 
@@ -354,7 +350,7 @@ function iniciar(){
     }
 
     if (questao_atual == 11) {
-      pergunta.innerHTML = `<h1 style="font-size: 3rem; background-color: white; color: black; border-radius: 1rem">Muito bem! Sua pontuação final foi <span id="questao_atual" class="laranjinha">${pontos}</span>/10</h1>`;
+      pergunta.innerHTML = `<h1 style="font-size: 3rem;">Muito bem! Sua pontuação final foi <span id="questao_atual" class="laranjinha">${pontos}</span>/10</h1>`;
       h1questao.innerHTML = `Você chegou ao fim do quiz!`
     
       

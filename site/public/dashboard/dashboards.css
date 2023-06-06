@@ -15,14 +15,14 @@ body {
 }
 
 .dash-right {
-background-color: #251870;
+  background-color: #251870;
 }
 
 .dash-right .avisos {
   width: 100%;
   /* border: 3px solid pink; */
   color: rgb(216, 216, 216);
-  font-family: "Exo 2", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding-right: 10rem;
 }
 
@@ -32,55 +32,43 @@ background-color: #251870;
   align-items: center;
 }
 
-.dash-right .avisos .container .div-form {
-  width: 100%;
-}
-
-.dash-right .avisos .container .div-form #form_postagem {
-  width: 100%;
-}
-
-.dash-right .avisos .div-form label {
+.div-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
 }
 
 .dash-right .avisos .div-form input {
-  width: 100%;
+  width: 150%;
   border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  border: 3px solid #ec6349;
 }
 
 .dash-right .avisos .div-form textarea {
-  width: 100%;
-  /* color: #E6005A; */
-  border: 3px solid #e6005a;
+  width: 159%;
+  border: 3px solid #ec6349;
   background-color: white;
   border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
 }
 
 .dash-right .avisos .div-form button {
   cursor: pointer;
-  font-family: "Exo 2", sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #ec6349;
   width: 120px;
-}
-
-.publicacao-btn-editar {
-  cursor: pointer;
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 5px 8px;
-  color: white;
-  background-color: #e6005a;
-  width: 80px;
+  align-self: center;
+  margin-top: 10px;
 }
 
 .publicacao {
@@ -90,8 +78,10 @@ background-color: #251870;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #251870;
   padding: 20px;
+  width: 90rem;
+  font-family: "Poppins", sans-serif;
 }
 
 .publicacao > *:not(:last-child) {
@@ -100,12 +90,17 @@ background-color: #251870;
 
 .div-results {
   width: 100%;
+  height: 30rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-right: 50rem;
 }
 
 .div-results .feed-container {
-  background-color: #212124;
+  background-color: white;
   border-radius: 5px;
-  margin-bottom: 80px;
+  color: #161818;
+  font-family: "Poppins", sans-serif;
 }
 
 .div-buttons {
@@ -127,7 +122,7 @@ background-color: #251870;
   width: 80%;
   position: relative;
   top: 0;
-  left: 20%;
+  left: 18.5%;
   background-color: #251870;
   height: 100vh;
   overflow: auto;
@@ -141,26 +136,6 @@ background-color: #251870;
   justify-content: center;
   width: 100%;
   margin-top: 30px;
-}
-
-.perigo-frio {
-  background-color: #5c6bc0;
-}
-
-.perigo-quente {
-  background-color: #ff7043;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
 }
 
 .item-regua {
@@ -265,7 +240,6 @@ background-color: #251870;
 .btn-white {
   color: #e6005a;
   background-color: white;
-
 }
 
 .label-captura {
@@ -326,6 +300,7 @@ canvas {
 #pergunta {
   font-size: 2rem;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .resposta {
@@ -338,10 +313,66 @@ canvas {
   color: white;
   cursor: pointer;
   text-align: center;
-  width: 20rem;
+  width: 25rem;
   height: 2rem;
+  font-family: "Poppins", sans-serif;
 }
 
-.laranjinha{
+.resposta h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+.laranjinha {
   color: #ec6349;
+}
+
+.header-left img {
+  filter: invert(0);
+}
+
+.header-left h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+}
+
+#imgLogout {
+  width: 3rem;
+  height: 3rem;
+}
+
+#imgLogout:hover {
+  cursor: pointer;
+}
+
+.publicacao-nome {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.publicacao-titulo {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.publicacao-descricao {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.publicacao-nome b{
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  color: #ec6349;
+}
+
+.publicacao-titulo b{
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.publicacao-descricao b{
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  color: #ec6349;
+  word-wrap: break-word;
 }

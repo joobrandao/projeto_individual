@@ -31,35 +31,36 @@
       crossorigin="anonymous"
     ></script>
   </head>
-
+  <!-- <span id="b_usuario">usuário</span> -->
   <body onload=" atualizarFeed()">
     <div class="janela">
       <div class="header-left">
-        <img src="../assets/imagensTeste/logo_pi.png" alt="">
-
-        <div class="hello">
-          <h3>Bem vindo, <span id="b_usuario">usuário</span>!</h3>
-        </div>
-
-        <div class="btn-nav-white">
-          <a href="./cards.html">
-            <h3>Quiz</h3>
+        <img src="../assets/imagensTeste/logo_pi.png" alt="" id="imgLogo">
+  
+  
+  
+        <span id="b_usuario" style="display: none;">usuário</span>
+        
+        <a href="./cards.html">
+          <h3>Quiz</h3>
+        </a>
+      
+  
+        
+          <a href="./dashboard.html">
+            <h3>Gráficos</h3>
           </a>
-        </div>
-
-        <div class="btn-nav">
-          <h3>Gráficos</h3>
-        </div>
-
-        <div class="btn-nav-white">
+        
+  
+        
           <a href="./mural.html">
             <h3>Comentários</h3>
           </a>
-        </div>
-
-        <div class="btn-logout" onclick="limparSessao()">
-          <h3>Sair</h3>
-        </div>
+    
+  
+        
+          <img src="../assets/imagensTeste/logout.png" alt="" onclick="limparSessao()" id="imgLogout">
+    
       </div>
 
       <div class="dash">
@@ -78,12 +79,6 @@
             </h3>
             <div class="graph">
               <canvas id="myChartCanvas1"></canvas>
-            </div>
-            <h3 class="tituloGraficos">
-              <span id="tituloAquario2">123</span>
-            </h3>
-            <div class="graph">
-              <canvas id="myChartCanvas2"></canvas>
             </div>
           </div>
 

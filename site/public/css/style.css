@@ -214,7 +214,7 @@ input {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #ec6349;
   width: 120px;
   align-self: center;
   margin-top: 5px;
@@ -250,13 +250,13 @@ input {
   left: 0;
   z-index: 999;
   height: 100vh;
-  width: 20%;
+  width: 17%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 2px solid #ec6349;
-  background-color: #4F32F0;
+  border-right: 3px solid black;
+  background-color: white;
 }
 
 .dash-right {
@@ -276,6 +276,11 @@ input {
 
 .header-left h1 {
   color: #310a26;
+}
+
+.header-left h3 {
+  color: #251870;
+  font-size: 2rem;
 }
 
 .hello {
@@ -366,4 +371,27 @@ input {
   gap: 3.5rem;
   border-radius: 1.5rem;
   box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+.conteudoFeed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+margin-top: 7rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.div-form {
+  width: 50rem;
+  padding-left: 20rem;
+}
+
+.feed {
+  border-radius: 1rem;
+  width: 700%; /* Largura preenchendo o espaço disponível */
+  max-width: 1000px; /* Largura máxima desejada */
+  height: 500px; /* Altura desejada */
+  overflow-y: auto; /* Adiciona um scroll vertical quando necessário */
+  overflow-x: hidden; /* Oculta o scroll horizontal */
 }
