@@ -110,3 +110,9 @@ VALUES ('Reclamação', 'O streaming mudou a forma como consumimos música, mas 
 -- Comentário 10
 INSERT INTO comentario (assunto, mensagem, fkUsuario)
 VALUES ('Artista Aleatório', 'Descobri uma rapper chamada Noname recentemente e estou impressionado com suas letras inteligentes e seu flow impecável. Vale a pena conferir! #HipHop', 5);
+
+
+
+select pontuacao from usuario;
+select pontuacao from quiz
+ where fkUsuario = 6;

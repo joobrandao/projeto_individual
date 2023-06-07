@@ -255,71 +255,83 @@
   
 
   function plotarGrafico(resposta, idAquario) {
-    console.log("iniciando plotagem do gráfico...");
+  console.log("iniciando plotagem do gráfico...");
 
-    // Criando estrutura para plotar gráfico - labels
-    let labels = [];
+  // Criando estrutura para plotar gráfico - labels
+  let labels = [];
 
-    // Criando estrutura para plotar gráfico - dados
-    let dados = {
-      labels: labels,
-      datasets: [
-        {
-          label: "QUANTIDADE DE CADASTROS COM ESTE GÊNERO MUSICAL",
-          data: [],
-          fill: true,
-          backgroundColor: [
-            "#f8db7e",
-            "#6f1b2c",
-            "#ce2340",
-            "#ec6349",
-            "#310a26",
-            "##F97068",
-            "##F2CD5D",
-            "##745296",
-            "##412722",
-          ],
-          tension: 0.1,
-        },
-      ],
-    };
+  // Criando estrutura para plotar gráfico - dados
+  let dados = {
+    labels: labels,
+    datasets: [
+      {
+        label: "QUANTIDADE DE CADASTROS COM ESTE GÊNERO MUSICAL",
+        data: [],
+        fill: true,
+        backgroundColor: [
+          "#f8db7e",
+          "#6f1b2c",
+          "#ce2340",
+          "#ec6349",
+          "#310a26",
+          "#F97068",
+          "#F2CD5D",
+          "#745296",
+          "#412722",
+        ],
+        tension: 0.1,
+      },
+    ],
+  };
 
-    console.log("----------------------------------------------");
-    console.log(
-      'Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":'
-    );
-    console.log(resposta);
+  console.log("----------------------------------------------");
+  console.log(
+    'Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":'
+  );
+  console.log(resposta);
 
-    // Inserindo valores recebidos em estrutura para plotar o gráfico
-    for (i = 0; i < resposta.length; i++) {
-      var registro = resposta[i];
-      labels.push(registro.generoMusical);
-      dados.datasets[0].data.push(registro.qtdVotos);
-    }
-
-    console.log("----------------------------------------------");
-    console.log("O gráfico será plotado com os respectivos valores:");
-    console.log("Labels:");
-    console.log(labels);
-    console.log("Dados:");
-    console.log(dados.datasets);
-    console.log("----------------------------------------------");
-
-    // Criando estrutura para plotar gráfico - config
-    const config = {
-      type: "doughnut",
-      data: dados,
-    
-    };
-
-    // Adicionando gráfico criado em div na tela
-    let myChart = new Chart(
-      document.getElementById(`myChartCanvas${idAquario}`),
-      config
-    );
-
-    // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+  // Inserindo valores recebidos em estrutura para plotar o gráfico
+  for (i = 0; i < resposta.length; i++) {
+    var registro = resposta[i];
+    labels.push(registro.generoMusical);
+    dados.datasets[0].data.push(registro.qtdVotos);
   }
+
+  console.log("----------------------------------------------");
+  console.log("O gráfico será plotado com os respectivos valores:");
+  console.log("Labels:");
+  console.log(labels);
+  console.log("Dados:");
+  console.log(dados.datasets);
+  console.log("----------------------------------------------");
+
+  // Criando estrutura para plotar gráfico - config
+  const config = {
+    type: "doughnut",
+    data: dados,
+    options: {
+      plugins: {
+        legend: {
+          labels: {
+            font: {
+              size: 17
+            },
+            color: "#FFFFFF" 
+          }
+        }
+      }
+    }
+  };
+
+  // Adicionando gráfico criado em div na tela
+  let myChart = new Chart(
+    document.getElementById(`myChartCanvas${idAquario}`),
+    config
+  );
+
+  // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+}
+
 
   // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
   // buscando a última medida inserida em tabela contendo as capturas,

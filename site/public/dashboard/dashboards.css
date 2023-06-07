@@ -92,7 +92,7 @@ body {
   width: 100%;
   height: 30rem;
   overflow-y: scroll;
-  overflow-x: scrool;
+  overflow-x: hidden;
   margin-right: 50rem;
 }
 
