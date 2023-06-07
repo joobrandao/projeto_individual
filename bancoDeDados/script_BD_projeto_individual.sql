@@ -28,15 +28,17 @@ pontuacao int,
 fkUsuario int, constraint foreign key (fkUsuario) references usuario(idUsuario) 
 );
 
+
+-- TRIGGER PARA CRIAÇÃO DA PONTUAÇÃO DO QUIZ
 DELIMITER //
 
-CREATE TRIGGER trigger_insert_usuario
-AFTER INSERT ON usuario
-FOR EACH ROW
-BEGIN
-    INSERT INTO quiz (pontuacao, fkUsuario)
-    VALUES (0, NEW.idUsuario);
-END //
+create trigger trigger_insert_usuario
+after insert on usuario
+for each row
+begin
+    insert into quiz (pontuacao, fkUsuario)
+    values (0, new.idUsuario);
+end //
 
 DELIMITER ;       
 
@@ -70,48 +72,6 @@ FROM (
     FROM usuario u
     JOIN quiz q ON q.fkUsuario = u.idUsuario
 ) AS subquery;
-
--- Comentário 1
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Reclamação', 'Estou cansado de ouvir as mesmas músicas na rádio. Precisamos de mais diversidade e artistas independentes sendo valorizados. #MusicIndustry', 1);
-
--- Comentário 2
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Artista Aleatório', 'Descobri um artista indie chamado Jack Johnson recentemente e estou adorando suas músicas relaxantes. Recomendo a todos que buscam uma vibe tranquila. #IndieMusic', 2);
-
--- Comentário 3
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Reclamação', 'Por que tantas músicas populares hoje em dia têm letras vazias e sem sentido? Sinto falta de composições mais profundas e significativas. #LyricsMatter', 3);
-
--- Comentário 4
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Artista Aleatório', 'Descobri uma banda chamada Alt-J e estou fascinado pela sua sonoridade única e experimental. Recomendo a todos que buscam algo diferente. #AlternativeMusic', 4);
-
--- Comentário 5
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Reclamação', 'Os preços dos ingressos para shows estão cada vez mais altos. É triste ver que nem todos podem ter acesso às experiências musicais ao vivo. #Concerts', 5);
-
--- Comentário 6
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Artista Aleatório', 'Descobri uma cantora chamada Lizzo e estou apaixonado pela sua voz poderosa e suas letras empoderadoras. Ela é uma verdadeira inspiração! #NewArtist', 1);
-
--- Comentário 7
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Reclamação', 'Não entendo por que certos artistas são tão superestimados. Há tantos talentos escondidos por aí que não recebem o reconhecimento que merecem. #UnderratedArtists', 2);
-
--- Comentário 8
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Artista Aleatório', 'Tenho ouvido muito a banda Tame Impala ultimamente. Suas músicas psicodélicas e os arranjos bem construídos são incríveis. #PsychedelicRock', 3);
-
--- Comentário 9
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Reclamação', 'O streaming mudou a forma como consumimos música, mas sinto falta de ter álbuns físicos e a experiência de folhear o encarte enquanto ouço. #PhysicalMedia', 4);
-
--- Comentário 10
-INSERT INTO comentario (assunto, mensagem, fkUsuario)
-VALUES ('Artista Aleatório', 'Descobri uma rapper chamada Noname recentemente e estou impressionado com suas letras inteligentes e seu flow impecável. Vale a pena conferir! #HipHop', 5);
-
-
 
 select pontuacao from usuario;
 select pontuacao from quiz
